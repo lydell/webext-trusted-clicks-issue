@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Popup blocker clicks test</title>
+  </head>
+  <body>
+    <p>
+      Triggering a click on this link should navigate to example.com. This works
+      in both Chrome and Firefox.
+    </p>
+    <p>
+      Additionally, triggering a click with ctrlKey:true should open a new tab.
+      This works in Chrome. In Firefox, nothing happens silently.
+    </p>
+    <p><a href="https://example.com">1: regular link to example.com</a></p>
+
+    <hr />
+
+    <p>
+      Triggering a click on this link should open a new tab. This works in
+      Chrome. In Firefox, the popup blocker is triggered.
+    </p>
+    <p>
+      <a href="https://example.com" target="_blank"
+        >2: target=_blank link to example.com</a
+      >
+    </p>
+
+    <hr />
+
+    <p>
+      Triggering a click on this button should open a new tab. This works in
+      Chrome. In Firefox, the popup blocker is triggered.
+    </p>
+    <p>
+      <button onclick="window.open('https://example.com')">
+        3: window.open example.com
+      </button>
+    </p>
+
+    <hr />
+
+    <p>
+      Triggering a click on this button should open a new window. This works in
+      Chrome. In Firefox, the popup blocker is triggered.
+    </p>
+    <p>
+      <button
+        onclick="window.open('https://example.com', '_blank', 'resizable,scrollbars,status')"
+      >
+        4: window.open example.com with window features
+      </button>
+    </p>
+  </body>
+</html>
